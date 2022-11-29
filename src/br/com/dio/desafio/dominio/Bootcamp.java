@@ -12,6 +12,14 @@ public class Bootcamp {
     private final LocalDate dataFinal = dataInicial.plusDays(45);
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+
+    public Bootcamp() {}
+    
+    public Bootcamp(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -42,6 +50,7 @@ public class Bootcamp {
     public void setConteudos(Set<Conteudo> conteudos) {
         this.conteudos = conteudos;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -96,6 +105,22 @@ public class Bootcamp {
         return true;
     }
 
+    @Override
+    public String toString() {
+        /* return "Bootcamp [nome=" + nome + ", descricao=" + descricao + ", dataInicial=" + dataInicial + ", dataFinal="
+                + dataFinal + "]"; */
+        String tmp = "";
+        for(Conteudo c : conteudos){
+            tmp += c;
+        }
+        
+        return nome +
+                "\n\tDescrição: " + descricao +
+                "\n\tData inicial: " + dataInicial +
+                "\n\tData final: " + dataFinal + 
+                "\n\tInscritos: " + devsInscritos +
+                "\n\tConteúdos: " + tmp;
+    }
     
 
 }

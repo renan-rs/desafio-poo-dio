@@ -6,8 +6,11 @@ public class Mentoria extends Conteudo{
 
     private LocalDate data;
 
-    public Mentoria() {
+    public Mentoria(String titulo, String descricao) {
+        super(titulo, descricao);
+        this.data = LocalDate.now();
     }
+
 
     public LocalDate getData() {
         return data;
@@ -23,9 +26,9 @@ public class Mentoria extends Conteudo{
 
     @Override
     public String toString() {
-        return "Mentoria [titulo=" + super.getTitulo() + 
-        ", descricao=" + super.getDescricao() + 
-        ", data=" + data + "]";
+        return "\n\t\tMentoria - Título: " + super.getTitulo() + 
+            "\n\t\tDescrição: " + super.getDescricao() + 
+            "\n\t\tData: " + data + "\n";
     }
 
 }
